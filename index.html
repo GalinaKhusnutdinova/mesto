@@ -13,7 +13,164 @@
         <img class="header__logo" src="./images/logo.png" alt="Mesto Russia" />
         <div class="header__line"></div>
       </header>
-      <main></main>
+      <main class="content">
+        <section class="profile">
+          <img
+            class="profile__avatar"
+            src="./images/avatar.jpg"
+            alt="Пожилой мужчина с красной шапке и очках"
+          />
+          <div class="profile__info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button">
+              <img src="./images/Vector-edit.png" alt="Кнопка реактирования" />
+            </button>
+
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+          <button class="profile__add-button">
+            <img
+              class="profile__image-add"
+              src="./images/Vector.png"
+              alt="кнопка добавления"
+            />
+          </button>
+        </section>
+        <section class="elements">
+          <article class="elements__element">
+            <img
+              class="elements__image"
+              src="./images/Заброшенный дом в горах.jpg"
+              alt="Заброшенный дом в горах"
+              width="100%"
+            />
+            <div class="elements__content">
+              <h2 class="elements__title">Карачаевск</h2>
+              <img
+                class="elements__group"
+                src="./images/Heart (1).png"
+                alt="like"
+              />
+            </div>
+          </article>
+          <article class="elements__element">
+            <img
+              class="elements__image"
+              src="./images/Закат.jpg"
+              alt="Заброшенный дом в горах"
+              width="100%"
+            />
+            <div class="elements__content">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <button class="elements__group">
+                <img src="./images/сердце.svg" alt="like" width="100%" />
+              </button>
+            </div>
+          </article>
+          <article class="elements__element">
+            <img
+              class="elements__image"
+              src="./images/Горы.jpg"
+              alt="Заброшенный дом в горах"
+              width="100%"
+            />
+            <div class="elements__content">
+              <h2 class="elements__title">Домбай</h2>
+              <img
+                class="elements__group"
+                src="./images/Heart (1).png"
+                alt="like"
+              />
+            </div>
+          </article>
+          <article class="elements__element">
+            <img
+              class="elements__image"
+              src="./images/Закат.jpg"
+              alt="Заброшенный дом в горах"
+              width="100%"
+            />
+            <div class="elements__content">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <img
+                class="elements__group"
+                src="./images/Heart (1).png"
+                alt="like"
+              />
+            </div>
+          </article>
+          <article class="elements__element">
+            <img
+              class="elements__image"
+              src="./images/Горы.jpg"
+              alt="Заброшенный дом в горах"
+              width="100%"
+            />
+            <div class="elements__content">
+              <h2 class="elements__title">Домбай</h2>
+              <img
+                class="elements__group"
+                src="./images/Heart (1).png"
+                alt="like"
+              />
+            </div>
+          </article>
+          <article class="elements__element">
+            <img
+              class="elements__image"
+              src="./images/Заброшенный дом в горах.jpg"
+              alt="Заброшенный дом в горах"
+              width="100%"
+            />
+            <div class="elements__content">
+              <h2 class="elements__title">Карачаево-Черкесия</h2>
+              <img
+                class="elements__group"
+                src="./images/Heart (1).png"
+                alt="like"
+              />
+            </div>
+          </article>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__title">© 2020 Mesto Russia</p>
+      </footer>
+      <section class="popup">
+        <div class="popup__body">
+          <div class="popup__container">
+            <button type="button" class="popup__close-button">
+              <img
+                src="./images/Close Icon.png"
+                alt="close"
+                width="100%"
+                height="100%"
+              />
+            </button>
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <form class="popup__form">
+              <input
+                class="popup__item"
+                type="text"
+                id="first-name"
+                value="Жак-Ив Кусто"
+                placeholder="Жак-Ив Кусто"
+              />
+              <input
+                class="popup__item"
+                type="text"
+                id="prof"
+                value="Исследователь океана"
+                placeholder="Исследователь океана"
+              />
+              <button type="submit" class="popup__save-button">
+                Сохранить
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </div>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
