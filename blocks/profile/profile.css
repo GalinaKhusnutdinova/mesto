@@ -15,8 +15,7 @@
   .profile {
     display: block;
     max-width: 282px;
-    padding-top: 42px;
+    padding: 42px 19px 36px;
     text-align: center;
-    padding-bottom: 36px;
   }
 }
