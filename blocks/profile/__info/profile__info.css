@@ -1,5 +1,4 @@
 .profile__info {
-  height: 54px;
   display: grid;
   grid-template-columns: 1fr 24px;
   grid-template-rows: 39px 18px;

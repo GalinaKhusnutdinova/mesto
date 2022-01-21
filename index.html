@@ -10,42 +10,39 @@
   <body class="body">
     <div class="page">
       <header class="header">
-        <img class="header__logo" src="./images/logo.png" alt="Место  Россия" />
-        <div class="header__line"></div>
+        <img class="header__logo" src="./images/logo.svg" alt="Место  Россия" />
       </header>
       <main class="content">
         <section class="profile">
           <img
             class="profile__avatar"
             src="./images/avatar.jpg"
-            alt="Пожилой мужчина с красной шапке и очках"
+            alt="Аватарка"
           />
           <div class="profile__info">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button">
-              <img src="./images/Vector-edit.png" alt="Кнопка реактирования" />
+            <button type="button" class="profile__edit-button">
+              <img src="./images/Vector-edit.svg" alt="Кнопка реактирования" />
             </button>
 
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
-          <button class="profile__add-button">
-            <img
-              class="profile__image-add"
-              src="./images/Vector.png"
-              alt="кнопка добавления"
-            />
-          </button>
+          <button
+            aria-label="плюс"
+            type="button"
+            class="profile__add-button"
+          ></button>
         </section>
         <section class="elements">
           <article class="elements__element">
             <img class="elements__image" src="./images/лес.jpg" alt="дом" />
             <div class="elements__content">
               <h2 class="elements__title">Карачаевск</h2>
-              <button class="elements__group">
+              <button type="button" class="elements__group">
                 <img
                   class="elements__group"
                   src="./images/сердце.svg"
-                  alt="Нравиться"
+                  alt="Нравится"
                 />
               </button>
             </div>
@@ -54,7 +51,7 @@
             <img class="elements__image" src="./images/Закат.jpg" alt="Закат" />
             <div class="elements__content">
               <h2 class="elements__title">Гора Эльбрус</h2>
-              <button class="elements__group">
+              <button type="button" class="elements__group">
                 <img
                   class="elements__group"
                   src="./images/сердце.svg"
@@ -67,7 +64,7 @@
             <img class="elements__image" src="./images/Горы.jpg" alt="Горы" />
             <div class="elements__content">
               <h2 class="elements__title">Домбай</h2>
-              <button class="elements__group">
+              <button type="button" class="elements__group">
                 <img
                   class="elements__group"
                   src="./images/сердце.svg"
@@ -80,7 +77,7 @@
             <img class="elements__image" src="./images/Закат.jpg" alt="Закат" />
             <div class="elements__content">
               <h2 class="elements__title">Гора Эльбрус</h2>
-              <button class="elements__group">
+              <button type="button" class="elements__group">
                 <img
                   class="elements__group"
                   src="./images/сердце.svg"
@@ -93,7 +90,7 @@
             <img class="elements__image" src="./images/Горы.jpg" alt="Горы" />
             <div class="elements__content">
               <h2 class="elements__title">Домбай</h2>
-              <button class="elements__group">
+              <button type="button" class="elements__group">
                 <img
                   class="elements__group"
                   src="./images/сердце.svg"
@@ -106,7 +103,7 @@
             <img class="elements__image" src="./images/лес.jpg" alt="дом" />
             <div class="elements__content">
               <h2 class="elements__title">Карачаево-Черкесия</h2>
-              <button class="elements__group">
+              <button type="button" class="elements__group">
                 <img
                   class="elements__group"
                   src="./images/сердце.svg"
@@ -118,41 +115,39 @@
         </section>
       </main>
       <footer class="footer">
-        <p class="footer__title">© 2020 Mesto Russia</p>
+        <p class="footer__title">&#169; 2020 Mesto Russia</p>
       </footer>
-      <section class="popup">
-        <div class="popup__body">
-          <div class="popup__container">
-            <button type="button" class="popup__close-button">
-              <img
-                class="popup__button-image"
-                src="./images/Close-Icon.png"
-                alt="закрыть"
-              />
-            </button>
-            <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form">
-              <input
-                class="popup__item"
-                type="text"
-                id="first-name"
-                value="Жак-Ив Кусто"
-                placeholder="Жак-Ив Кусто"
-              />
-              <input
-                class="popup__item"
-                type="text"
-                id="prof"
-                value="Исследователь океана"
-                placeholder="Исследователь океана"
-              />
-              <button type="submit" class="popup__save-button">
-                Сохранить
-              </button>
-            </form>
-          </div>
+      <div class="popup">
+        <div class="popup__container">
+          <button type="button" class="popup__close-button">
+            <img
+              class="popup__button-image"
+              src="./images/Close-Icon.svg"
+              alt="закрыть"
+            />
+          </button>
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form method="get" name="myForm" class="popup__form">
+            <input
+              class="popup__item"
+              name="Name"
+              type="text"
+              id="first-name"
+              value=""
+              placeholder="Ваше имя"
+            />
+            <input
+              class="popup__item"
+              name="Job"
+              type="text"
+              id="prof"
+              value=""
+              placeholder="Ваша деятельность"
+            />
+            <button type="submit" class="popup__save-button">Сохранить</button>
+          </form>
         </div>
-      </section>
+      </div>
     </div>
     <script src="./scripts/index.js"></script>
   </body>

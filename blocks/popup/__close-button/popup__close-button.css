@@ -5,11 +5,10 @@
   position: absolute;
   top: -40px;
   right: -40px;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .popup__close-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
   opacity: 0.6;
   cursor: pointer;
 }
