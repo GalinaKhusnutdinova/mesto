@@ -28,3 +28,8 @@ function formSubmitHandler(evt) {
 profileEditButton.addEventListener("click", openPopup);
 popupCloseButton.addEventListener("click", closePopup);
 formElement.addEventListener("submit", formSubmitHandler);
+
+console.log("Пришёл. Увидел. Победил.".split(" "));
+// ["Пришёл.", "Увидел.", "Победил."]
+console.log("Пришёл. Увидел. Победил.".split(". "));
+// ["Пришёл", "Увидел", "Победил."]
