@@ -143,16 +143,9 @@ function openPopupFigureloock(event, item) {
 
   popupFigureLoockPhoto.classList.add("popup_opened");
 
-  //const elementsTitle = document.querySelector(".elements__title");
-  //const elementsImage = document.querySelector(".elements__image");
-
   (popupImage.alt = item.name),
     (popupImage.src = item.link),
     (popupFigcaption.textContent = item.name);
-
-  //popupImage.src = elementsImage.src;
-  //popupImage.alt = elementsImage.alt;
-  //popupFigcaption.textContent = elementsTitle.textContent;
 }
 
 const popupCloseButtonLoockPhoto = document.querySelector(
@@ -163,23 +156,15 @@ function closePopupFigureloock() {
   popupFigureLoockPhoto.classList.remove("popup_opened");
 }
 
-//const elementsImage = document.querySelector(".elements__image");
-
-//elementsImage.addEventListener("click", openPopupFigureloock);
-
 popupCloseButtonLoockPhoto.addEventListener("click", closePopupFigureloock);
 profileAddButton.addEventListener("click", openPopupAddPhoto);
 popupCloseButtonAddPhoto.addEventListener("click", closePopupAddPhoto);
 formElementAddPhoto.addEventListener("submit", formSubmitHandlerAddPhoto);
 
 //удаление элемента
-//const popupDeleteButton = document.querySelector(".popup__delete-button");
-
 function deliteElement(event) {
   event.target.closest(".elements__element").remove();
 }
-
-//popupDeleteButton.addEventListener("click", deliteElement);
 
 //настраиваем лайки
 const elementsGroup = document.querySelector(".elements__group");
@@ -188,5 +173,3 @@ function likeElement(event) {
   event.preventDefault();
   event.target.classList.toggle("elements__group_active");
 }
-
-//elementsGroup.addEventListener("click", likeElement);
