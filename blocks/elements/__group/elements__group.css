@@ -6,6 +6,8 @@
   background-image: url(../../../images/сердце.svg);
   background-repeat: no-repeat;
   background-size: 22px 19px;
+  width: 22px;
+  height: 19px;
 }
 
 .elements__group:hover {

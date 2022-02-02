@@ -6,7 +6,6 @@
   width: 24px;
   height: 24px;
   align-self: flex-end;
-  z-index: 4;
 }
 
 .profile__edit-button:hover {
