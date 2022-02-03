@@ -33,6 +33,7 @@ function closePopup(popup) {
 
 function openPopupProfileEdit() {
   openPopup(popupProfileEdit);
+  insertInputsValue();
 }
 
 function closePopupProfileEdit() {
@@ -46,7 +47,7 @@ function handleProfileFormSubmit(evt) {
   closePopup(popupProfileEdit);
 }
 
-function InputEdite() {
+function insertInputsValue() {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
 }
@@ -54,7 +55,6 @@ function InputEdite() {
 profileEditButton.addEventListener("click", openPopupProfileEdit);
 popupCloseButton.addEventListener("click", closePopupProfileEdit);
 formProfilEdit.addEventListener("submit", handleProfileFormSubmit);
-profileEditButton.addEventListener("click", InputEdite);
 
 function render() {
   initialCards.forEach(renderCreateCard);
@@ -97,7 +97,6 @@ function closePopupAddPhoto() {
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
   const card = { name: nameImgInput.value, link: linkImgInput.value };
-  createCard(card);
   renderCreateCard(card);
   closePopupAddPhoto();
   nameImgInput.value = "";
