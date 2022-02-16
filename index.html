@@ -57,23 +57,36 @@
             method="get"
             name="myForm"
             class="popup__form popup__form_profil-edit"
+            novalidate
           >
-            <input
-              class="popup__item popup__item_name"
-              name="Name"
-              type="text"
-              id="first-name"
-              value=""
-              placeholder="Ваше имя"
-            />
-            <input
-              class="popup__item popup__item_job"
-              name="Job"
-              type="text"
-              id="prof"
-              value=""
-              placeholder="Ваша деятельность"
-            />
+            <label class="popup__label">
+              <input
+                class="popup__item popup__item_name"
+                name="Name"
+                type="text"
+                id="first-name"
+                value=""
+                placeholder="Ваше имя"
+                required
+                minlength="2"
+                maxlength="40"
+              />
+              <span class="popup__message first-name-error"></span>
+            </label>
+            <label class="popup__label">
+              <input
+                class="popup__item popup__item_job"
+                name="Job"
+                type="text"
+                id="prof"
+                value=""
+                placeholder="Ваша деятельность"
+                required
+                minlength="2"
+                maxlength="200"
+              />
+              <span class="popup__message prof-error"></span>
+            </label>
             <button type="submit" class="popup__save-button">Сохранить</button>
           </form>
         </div>
@@ -97,23 +110,34 @@
             method="get"
             name="myForm"
             class="popup__form popup__form_add-photo"
+            novalidate
           >
-            <input
-              class="popup__item popup__item_add"
-              name="Name"
-              type="text"
-              id="name-img"
-              value=""
-              placeholder="Название"
-            />
-            <input
-              class="popup__item popup__item_add"
-              name="Job"
-              type="text"
-              id="link-img"
-              value=""
-              placeholder="Ссылка на картинку"
-            />
+            <label class="popup__label">
+              <input
+                class="popup__item popup__item_add"
+                name="Name"
+                type="text"
+                id="name-img"
+                value=""
+                placeholder="Название"
+                required
+                minlength="2"
+                maxlength="30"
+              />
+              <span class="popup__message name-img-error"></span>
+            </label>
+            <label class="popup__label">
+              <input
+                class="popup__item popup__item_add"
+                name="Job"
+                type="url"
+                id="link-img"
+                value=""
+                placeholder="Ссылка на картинку"
+                required
+              />
+              <span class="popup__message link-img-error"></span>
+            </label>
             <button type="submit" class="popup__save-button">Создать</button>
           </form>
         </div>
@@ -155,6 +179,7 @@
       </article>
     </template>
     <script src="./scripts/cards.js"></script>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

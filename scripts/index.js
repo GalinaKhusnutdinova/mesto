@@ -23,21 +23,37 @@ const popupCloseButtonLoockPhoto = document.querySelector(
   ".popup__button-image_loock-photo"
 );
 
+function closePopupOverleyer(event) {
+  if (event.target === event.currentTarget) {
+    closePopup(event.target);
+  }
+}
+
+function closePopupEsc(event) {
+  if (event.key == "Escape") {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+}
+
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", closePopupEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopupEsc);
 }
 
 function openPopupProfileEdit() {
   openPopup(popupProfileEdit);
   insertInputsValue();
+  popupProfileEdit.addEventListener("click", closePopupOverleyer);
 }
 
 function closePopupProfileEdit() {
   closePopup(popupProfileEdit);
+  popupProfileEdit.removeEventListener("click", closePopupOverleyer);
 }
 
 function handleProfileFormSubmit(evt) {
@@ -88,10 +104,12 @@ render();
 
 function openPopupAddPhoto() {
   openPopup(popupTypeAddPhoto);
+  popupTypeAddPhoto.addEventListener("click", closePopupOverleyer);
 }
 
 function closePopupAddPhoto() {
   closePopup(popupTypeAddPhoto);
+  popupTypeAddPhoto.removeEventListener("click", closePopupOverleyer);
 }
 
 function handleCardFormSubmit(evt) {
@@ -105,14 +123,15 @@ function handleCardFormSubmit(evt) {
 
 function openPopupFigureloock(item) {
   openPopup(popupFigureLoockPhoto);
-
   popupImage.alt = item.name;
   popupImage.src = item.link;
   popupFigcaption.textContent = item.name;
+  popupFigureLoockPhoto.addEventListener("click", closePopupOverleyer);
 }
 
 function closePopupFigureloock() {
   closePopup(popupFigureLoockPhoto);
+  popupFigureLoockPhoto.removeEventListener("click", closePopupOverleyer);
 }
 
 popupCloseButtonLoockPhoto.addEventListener("click", closePopupFigureloock);
