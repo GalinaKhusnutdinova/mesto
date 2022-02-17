@@ -38,22 +38,22 @@ function closePopupEsc(event) {
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
+  popup.addEventListener("mousedown", closePopupOverleyer);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
+  popup.removeEventListener("mousedown", closePopupOverleyer);
 }
 
 function openPopupProfileEdit() {
   openPopup(popupProfileEdit);
-  insertInputsValue();
-  popupProfileEdit.addEventListener("click", closePopupOverleyer);
+  insertInputsValuePopupProfileEdit();
 }
 
 function closePopupProfileEdit() {
   closePopup(popupProfileEdit);
-  popupProfileEdit.removeEventListener("click", closePopupOverleyer);
 }
 
 function handleProfileFormSubmit(evt) {
@@ -63,7 +63,7 @@ function handleProfileFormSubmit(evt) {
   closePopup(popupProfileEdit);
 }
 
-function insertInputsValue() {
+function insertInputsValuePopupProfileEdit() {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
 }
@@ -74,6 +74,10 @@ formProfilEdit.addEventListener("submit", handleProfileFormSubmit);
 
 function render() {
   initialCards.forEach(renderCreateCard);
+}
+
+function renderCard(card, container) {
+  container.prepend(card);
 }
 
 function createCard(item) {
@@ -97,19 +101,17 @@ function createCard(item) {
 
 function renderCreateCard(item) {
   const card = createCard(item);
-  elements.prepend(card);
+  renderCard(card, elements);
 }
 
 render();
 
 function openPopupAddPhoto() {
   openPopup(popupTypeAddPhoto);
-  popupTypeAddPhoto.addEventListener("click", closePopupOverleyer);
 }
 
 function closePopupAddPhoto() {
   closePopup(popupTypeAddPhoto);
-  popupTypeAddPhoto.removeEventListener("click", closePopupOverleyer);
 }
 
 function handleCardFormSubmit(evt) {
@@ -119,6 +121,10 @@ function handleCardFormSubmit(evt) {
   closePopupAddPhoto();
   nameImgInput.value = "";
   linkImgInput.value = "";
+
+  const button = popupTypeAddPhoto.querySelector(".popup__save-button");
+  button.setAttribute("disabled", "");
+  button.classList.add("popup__save-button_inactive");
 }
 
 function openPopupFigureloock(item) {
@@ -126,12 +132,10 @@ function openPopupFigureloock(item) {
   popupImage.alt = item.name;
   popupImage.src = item.link;
   popupFigcaption.textContent = item.name;
-  popupFigureLoockPhoto.addEventListener("click", closePopupOverleyer);
 }
 
 function closePopupFigureloock() {
   closePopup(popupFigureLoockPhoto);
-  popupFigureLoockPhoto.removeEventListener("click", closePopupOverleyer);
 }
 
 popupCloseButtonLoockPhoto.addEventListener("click", closePopupFigureloock);

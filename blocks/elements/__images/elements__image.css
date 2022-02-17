@@ -8,3 +8,8 @@
   border-top-right-radius: 10px;
   object-fit: cover;
 }
+
+.elements__image:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
