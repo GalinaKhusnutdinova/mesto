@@ -16,11 +16,8 @@ export class Card {
   };
 
   _setEventListeners() {
-    const deleteButton = this._newItem.querySelector(".popup__delete-button");
-    this._likeButton = this._newItem.querySelector(".elements__group");
-
     this._likeButton.addEventListener("click", this._likeElement);
-    deleteButton.addEventListener("click", this._deleteElement);
+    this._deleteButton.addEventListener("click", this._deleteElement);
     this._cardImage.addEventListener("click", () =>
       this._handleCardClick(this._name, this._link)
     );
@@ -30,6 +27,8 @@ export class Card {
     //нашли
     this._newItem = this._elementsTemplate.cloneNode(true);
     this._cardImage = this._newItem.querySelector(".elements__image");
+    this._likeButton = this._newItem.querySelector(".elements__group");
+    this._deleteButton = this._newItem.querySelector(".popup__delete-button");
 
     //заполнили
     this._cardImage.src = this._link;
