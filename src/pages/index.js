@@ -1,4 +1,4 @@
-import "./pages/index.css"; // добавьте импорт главного файла стилей
+import "./index.css"; // добавьте импорт главного файла стилей
 import {
   initialCards,
   profileEditButton,
@@ -7,13 +7,13 @@ import {
   profileAddButton,
   config,
   formValidators,
-} from "./utils/constants.js";
-import FormValidator from "./components/FormValidator.js";
-import Card from "./components/Card.js";
-import Section from "./components/Section.js";
-import PopupWithImage from "./components/PopupWithImage.js";
-import PopupWithForm from "./components/PopupWithForm.js";
-import UserInfo from "./components/UserInfo.js";
+} from "../utils/constants.js";
+import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
 
 // Включение валидации
 const enableValidation = (config) => {
@@ -49,7 +49,7 @@ function insertInputsValuePopupProfileEdit() {
   jobInput.value = job;
 }
 // Добавление карточки
-const element = new Section(
+const section = new Section(
   { items: initialCards, renderer: renderCreateCard },
   ".elements"
 );
@@ -69,10 +69,10 @@ function createCard(item) {
 function renderCreateCard(item) {
   // функция renderer
   const cardElement = createCard(item);
-  element.addItem(cardElement);
+  section.addItem(cardElement);
 }
 
-element.render();
+section.render();
 
 const handleCardFormSubmit = (data) => {
   renderCreateCard({

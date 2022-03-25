@@ -11,8 +11,9 @@ export default class Card {
     this._likeButton.classList.toggle("elements__group_active");
   };
 
-  _deleteElement = (event) => {
-    event.target.closest(".elements__element").remove();
+  _deleteElement = () => {
+    this._newItem.remove();
+    this._newItem = null;
   };
 
   _setEventListeners() {
@@ -25,7 +26,9 @@ export default class Card {
 
   createCard() {
     //нашли
-    this._newItem = this._elementsTemplate.cloneNode(true);
+    this._newItem = this._elementsTemplate
+      .querySelector(".elements__element")
+      .cloneNode(true);
     this._cardImage = this._newItem.querySelector(".elements__image");
     this._likeButton = this._newItem.querySelector(".elements__group");
     this._deleteButton = this._newItem.querySelector(".popup__delete-button");
