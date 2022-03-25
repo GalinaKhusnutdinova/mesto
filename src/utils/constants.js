@@ -25,6 +25,15 @@ export const initialCards = [
   },
 ];
 
+export const config = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__item",
+  submitButtonSelector: ".popup__save-button",
+  inactiveButtonClass: "popup__save-button_inactive",
+  inputErrorClass: "popup__message_active",
+  errorClass: "popup__item_error",
+};
+
 export const profileEditButton = document.querySelector(
   ".profile__edit-button"
 );
@@ -52,3 +61,4 @@ export const popupFigureLoockPhoto = document.querySelector(
   ".popup_type_loock-photo"
 );
 export const popups = document.querySelectorAll(".popup");
+export const formValidators = {};

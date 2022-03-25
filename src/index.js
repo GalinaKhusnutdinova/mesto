@@ -2,22 +2,11 @@ import "./pages/index.css"; // добавьте импорт главного ф
 import {
   initialCards,
   profileEditButton,
-  popupProfileEdit,
-  formProfilEdit,
   nameInput,
-  profileTitle,
-  profileSubtitle,
   jobInput,
   profileAddButton,
-  linkImgInput,
-  nameImgInput,
-  popupTypeAddPhoto,
-  formAddPhoto,
-  elements,
-  popupImage,
-  popupFigcaption,
-  popupFigureLoockPhoto,
-  popups,
+  config,
+  formValidators,
 } from "./utils/constants.js";
 import FormValidator from "./components/FormValidator.js";
 import Card from "./components/Card.js";
@@ -25,17 +14,6 @@ import Section from "./components/Section.js";
 import PopupWithImage from "./components/PopupWithImage.js";
 import PopupWithForm from "./components/PopupWithForm.js";
 import UserInfo from "./components/UserInfo.js";
-
-const config = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__item",
-  submitButtonSelector: ".popup__save-button",
-  inactiveButtonClass: "popup__save-button_inactive",
-  inputErrorClass: "popup__message_active",
-  errorClass: "popup__item_error",
-};
-
-const formValidators = {};
 
 // Включение валидации
 const enableValidation = (config) => {
