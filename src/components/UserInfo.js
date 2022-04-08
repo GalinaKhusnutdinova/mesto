@@ -1,7 +1,8 @@
 export default class UserInfo {
-  constructor({ nameSelector, jobSelector }) {
+  constructor({ nameSelector, jobSelector, avatarSelector }) {
     this._nameElement = document.querySelector(nameSelector);
     this._jobElement = document.querySelector(jobSelector);
+    this._avatarElement = document.querySelector(avatarSelector);
   }
   // возвращает объект с данными пользователя.
   // Этот метод пригодится когда данные пользователя нужно будет подставить в форму при открытии.
@@ -15,5 +16,9 @@ export default class UserInfo {
   setUserInfo(name, job) {
     this._nameElement.textContent = name;
     this._jobElement.textContent = job;
+  }
+
+  addUserAvatar(link) {
+    this._avatarElement.src = link;
   }
 }

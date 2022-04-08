@@ -9,6 +9,7 @@
   margin: 0 auto;
   align-items: center;
   padding-bottom: 51px;
+  position: relative;
 }
 
 @media screen and (max-width: 767px) {
