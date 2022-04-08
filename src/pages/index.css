@@ -31,7 +31,7 @@
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__close-button/_display-none/popup__close-button_display-none.css);
 @import url(../blocks/popup/__title/popup__title.css);
-@import url(../blocks/popup/__title/_delete-photo/popop__title_delete-photo.css);
+@import url(../blocks/popup/__title/_delete-photo/popup__title_delete-photo.css);
 @import url(../blocks/popup/__title/_avatar/popup__title_avatar.css);
 @import url(../blocks/popup/__item/popup__item.css);
 @import url(../blocks/popup/__item/_add/popup__item_add.css);
