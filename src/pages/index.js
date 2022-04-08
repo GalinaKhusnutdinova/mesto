@@ -1,12 +1,12 @@
 import "./index.css"; // добавьте импорт главного файла стилей
 import {
-  initialCards,
   profileEditButton,
   nameInput,
   jobInput,
   profileAddButton,
   config,
   formValidators,
+  avatarButton,
 } from "../utils/constants.js";
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
@@ -15,7 +15,6 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import { api } from "../components/Api.js";
-
 let userId;
 
 api.getProfile().then((res) => {
@@ -105,7 +104,6 @@ function createCard(item) {
     },
     (id) => {
       if (card.isLiked()) {
-        console.log(id);
         api.deleteLike(id).then((res) => {
           card.setLikes(res.likes);
         });
@@ -187,10 +185,7 @@ function closePopupAddPhoto() {
   addPhototPopup.close();
 }
 
-const avatarButton = document.querySelector(".profile__photo");
-
 avatarButton.addEventListener("click", openPopupAvatar);
-
 profileAddButton.addEventListener("click", openPopupAddPhoto);
 profileEditButton.addEventListener("click", openPopupProfileEdit);
 

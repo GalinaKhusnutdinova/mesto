@@ -19,11 +19,7 @@
       <main class="content">
         <section class="profile">
           <div class="profile__block-avatar">
-            <img
-              class="profile__avatar"
-              src=""
-              alt="Аватарка"
-            />
+            <img class="profile__avatar" src="." alt="Аватарка" />
             <div class="profile__photo"></div>
           </div>
 
@@ -204,7 +200,7 @@
           >
             <img
               class="popup__close popup__button-image"
-              src=""
+              src="."
               alt="закрыть"
             />
           </button>
@@ -215,18 +211,17 @@
             class="popup__form popup__form_delete-photo"
             novalidate
           >
-            </label>
             <label class="popup__label">
               <input
                 class="popup__item popup__item_add"
                 name="link"
                 type="url"
-                id="link-img"
+                id="link-avatar"
                 value=""
                 placeholder="Ссылка на картинку"
                 required
               />
-              <span class="popup__message link-img-error"></span>
+              <span class="popup__message link-avatar-error"></span>
             </label>
             <button type="submit" class="popup__save-button">Сохранить</button>
           </form>
