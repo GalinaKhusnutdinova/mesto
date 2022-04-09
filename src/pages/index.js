@@ -17,11 +17,20 @@ import UserInfo from "../components/UserInfo.js";
 import { api } from "../components/Api.js";
 let userId;
 
-api.getProfile().then((res) => {
-  userInfo.setUserInfo(res.name, res.about);
-  userInfo.addUserAvatar(res.avatar);
-  userId = res._id;
-});
+Promise.all([api.getProfile(), api.getInitialCards()])
+  .then(([userData, card]) => {
+    // тут установка данных пользователя
+    userInfo.setUserInfo(userData.name, userData.about);
+    userInfo.addUserAvatar(userData.avatar);
+    userId = userData._id;
+    // и тут отрисовка карточек
+    section.render(card);
+  })
+
+  .catch((err) => {
+    // тут ловим ошибку
+    console.log(err);
+  });
 
 // Включение валидации
 const enableValidation = (config) => {
@@ -54,6 +63,9 @@ function handleProfileFormSubmit(data) {
       userInfo.setUserInfo(name, job);
       editProfilePopup.close();
     })
+    .catch((err) => {
+      console.log("Errorr: ", err);
+    })
     .finally(() => {
       editProfilePopup.renderLoading(false);
     });
@@ -67,6 +79,9 @@ function handleAvatarFormSubmit(data) {
     .then((res) => {
       userInfo.addUserAvatar(res.avatar);
       addAvatarPopup.close();
+    })
+    .catch((err) => {
+      console.log("Errorr: ", err);
     })
     .finally(() => {
       addAvatarPopup.renderLoading(false);
@@ -96,21 +111,36 @@ function createCard(item) {
     (id) => {
       deletePhototPopup.open();
       deletePhototPopup.changeSubmitForm(() => {
-        api.deleteCard(id).then((res) => {
-          card.deleteElement();
-          deletePhototPopup.close();
-        });
+        api
+          .deleteCard(id)
+          .then((res) => {
+            card.deleteElement();
+            deletePhototPopup.close();
+          })
+          .catch((res) => {
+            console.log(res);
+          });
       });
     },
     (id) => {
       if (card.isLiked()) {
-        api.deleteLike(id).then((res) => {
-          card.setLikes(res.likes);
-        });
+        api
+          .deleteLike(id)
+          .then((res) => {
+            card.setLikes(res.likes);
+          })
+          .catch((res) => {
+            console.log(res);
+          });
       } else {
-        api.addLike(id).then((res) => {
-          card.setLikes(res.likes);
-        });
+        api
+          .addLike(id)
+          .then((res) => {
+            card.setLikes(res.likes);
+          })
+          .catch((res) => {
+            console.log(res);
+          });
       }
     }
   );
@@ -124,9 +154,6 @@ function renderCreateCard(item) {
   const cardElement = createCard(item);
   section.addItem(cardElement);
 }
-api.getInitialCards().then((res) => {
-  section.render(res);
-});
 
 const handleCardFormSubmit = (data) => {
   addPhototPopup.renderLoading(true);
@@ -135,6 +162,9 @@ const handleCardFormSubmit = (data) => {
     .then((res) => {
       renderCreateCard({ ...res, userId });
       closePopupAddPhoto();
+    })
+    .catch((err) => {
+      console.log("Errorr: ", err);
     })
     .finally(() => {
       addPhototPopup.renderLoading(false);
